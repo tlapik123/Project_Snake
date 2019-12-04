@@ -2,8 +2,14 @@
  
  ### Description
  Game Snake programmed in python with few extra features as a credit programm.
+ Programmed using the library Pygame
  ### Table of Contents:
- Python file with programmed game
+ Python file with programmed game.
+ ### Output
+ The output of the file is a window with pixels representing the snake. 
+ There is also a menu.
+ 
+ /rest of the features/
  ### Installation:
  To launch the project install Python and then download the .py file from the repository. 
  After a successful download just launch the file.
@@ -16,9 +22,7 @@
  /rest of the features/
  ### Credits:
  Petr Tlapa - lead manager
- 
  Petr Tlapa - designer
- 
  Petr Tlapa - programmer
  
  
