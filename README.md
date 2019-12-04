@@ -9,11 +9,8 @@
  After a successful download just launch the file.
  ### Usage:
  To play the game just run the .py file and navigate wia arrows in the simple menu. 
- 
  Then hit enter to select the option. 
- 
  In the game navigate your snake wia arrows like in the menu. 
- 
  Collect red dots (with some imagination apples) to grow your snake and avoid the obstacles.
  
  /rest of the features/
