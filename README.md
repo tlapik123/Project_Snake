@@ -24,7 +24,7 @@
  
  Documentation in file missing
  
- Lots of stuff looked up online and taken from people that came with much better implementation
+ Lots of stuff looked up online and taken from people that came with much better implementation, Credit to them!
  ## Planning to add:
  Barrier blocks
  
