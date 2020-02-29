@@ -41,6 +41,8 @@
  Different levels maybe?
  
  ## Credit:
+ To my sister Gabriela who is the author of all the music used.
+ 
  To all of the people online that came with much better implementation that I originally thought was good.
  
  
