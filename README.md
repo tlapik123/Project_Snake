@@ -7,6 +7,12 @@
  ## Output
  The output of the file is a window with squares representing the snake. 
  
+ The look of the game:
+ 
+ ![Me playing the game](https://github.com/tlapik123/Project_Snake/tree/Starting/README_images/img1.png)
+ 
+ ![Me losing the game](https://github.com/tlapik123/Project_Snake/tree/Starting/README_images/img1.png)
+ 
  ## Installation:
  To launch the project install Python and then download the .py file from the repository. 
  
@@ -15,10 +21,9 @@
  To play the game just run the .py file and turn using Arrow keys 
  
  Collect green dots (with some imagination poisonous apples) to grow your snake and avoid the obstacles.
- ## Built with
+ ## Built with:
  * [Pygame](https://www.pygame.org/) - The main library used
  ## Known Issues:
- ###### Keys aren't fully responsive (dont know if that's Pygame problem) #solved
  new issue: game OVER happens when multiple keys that would consequently kill snake are pressed but the game doesnt 
  draw it on the screen fast enough 
  
