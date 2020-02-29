@@ -8,8 +8,7 @@ from tkinter import messagebox
 
 
 class Cube(object):
-    rows: int = 20
-    w = 500
+    global width, rows
 
     def __init__(self, start, dirx=1, diry=0, col=(255, 0, 0)):
         self.pos = start
@@ -23,7 +22,7 @@ class Cube(object):
         self.pos = (self.pos[0] + self.dirx, self.pos[1] + self.diry)
 
     def draw(self, surface, eyes=False):
-        dis = self.w // self.rows
+        dis = width // rows
         i = self.pos[0]
         j = self.pos[1]
         pygame.draw.rect(surface, self.color, (i * dis + 1, j * dis + 1, dis - 2, dis - 2))
@@ -37,6 +36,7 @@ class Cube(object):
 
 
 class Had(object):
+    global width, rows
     body = []
     turns = {}
 
@@ -87,17 +87,17 @@ class Had(object):
                     self.turns.pop(p)
             else:
                 if c.dirx == -1 and c.pos[0] <= 0:
-                    c.pos = (c.rows - 1, c.pos[1])
-                elif c.dirx == 1 and c.pos[0] >= c.rows - 1:
+                    c.pos = (rows - 1, c.pos[1])
+                elif c.dirx == 1 and c.pos[0] >= rows - 1:
                     c.pos = (0, c.pos[1])
-                elif c.diry == 1 and c.pos[1] >= c.rows - 1:
+                elif c.diry == 1 and c.pos[1] >= rows - 1:
                     c.pos = (c.pos[0], 0)
                 elif c.diry == -1 and c.pos[1] <= 0:
-                    c.pos = (c.pos[0], c.rows - 1)
+                    c.pos = (c.pos[0], rows - 1)
                 else:
                     c.move(c.dirx, c.diry)
 
-    def reset(self, pos):
+    def reset(self, pos):  # for future implementation
         self.head = Cube(pos)
         self.body = []
         self.body.append(self.head)
