@@ -9,9 +9,9 @@
  
  The look of the game:
  
- ![Me playing the game](/blob/tree/Starting/README_images/img1.png)
+ ![Me playing the game](/README_images/img1.png)
  
- ![Me losing the game](/blob/tree/Starting/README_images/img2.png)
+ ![Me losing the game](/README_images/img2.png)
  
  ## Installation:
  To launch the project install Python and then download the .py file from the repository. 
