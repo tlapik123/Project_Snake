@@ -33,13 +33,15 @@
  ##### Solved:
  ###### Keys aren't fully responsive (dont know if that's Pygame problem)
  
- Lots of stuff looked up online and taken from people that came with much better implementation, Credit to them!
  ## Planning to add:
  Barrier blocks
  
  Negative effects
  
  Different levels maybe?
+ 
+ ##Credit:
+ To all of the people online that came with much better implementation that I originally thought was good.
  
  
  
