@@ -173,7 +173,9 @@ def main():
     global width, rows, h, apple, speed
     width = 500
     rows = 20
-    win = pygame.display.set_mode((width, width))
+    window = pygame.display
+    win = window.set_mode((width, width))
+    window.set_caption("Snake 0.61")
     h = Had((255, 0, 0), (10, 10))
     h.addcube()
     apple = Cube(spawnapple(rows, h), col=(0, 255, 0))
