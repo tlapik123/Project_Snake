@@ -170,9 +170,15 @@ def refreshwindow(surface):
 
 
 def main():
-    global width, rows, h, apple, speed
+    global width, rows, h, apple, speed, beep
     width = 500
     rows = 20
+    #  load music
+    pygame.mixer.init(22050, -16, 2, 1024)
+    pygame.mixer.music.load("Project_snake_files\soundtrack.wav")
+    pygame.mixer.music.play(-1)
+    beep = pygame.mixer.Sound("Project_snake_files\puap.wav")
+    gameover = pygame.mixer.Sound("Project_snake_files\game_over.wav")
     window = pygame.display
     win = window.set_mode((width, width))
     window.set_caption("Snake 0.61")
@@ -188,12 +194,15 @@ def main():
         clock.tick(speed)
         h.move()
         if h.body[0].pos == apple.pos:  # růst hada
+            pygame.mixer.Sound.play(beep)
             h.addcube()
             apple = Cube(spawnapple(rows, h), col=(0, 255, 0))
             speed += 1
 
         for x in range(len(h.body)):  # kouknout se jestli jsem nenaboural sám do sebe
             if h.body[x].pos in list(map(lambda z: z.pos, h.body[x + 1:])):
+                pygame.mixer.music.stop()
+                pygame.mixer.Sound.play(gameover)
                 message("You LOST!", "Game Over \n" + "Your score was: " + str(len(h.body)))
                 flag = False
 
