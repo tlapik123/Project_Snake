@@ -40,7 +40,7 @@
  
  Different levels maybe?
  
- ##Credit:
+ ## Credit:
  To all of the people online that came with much better implementation that I originally thought was good.
  
  
