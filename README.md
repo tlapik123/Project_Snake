@@ -18,7 +18,9 @@
  ## Built with
  * [Pygame](https://www.pygame.org/) - The main library used
  ## Known Issues:
- Keys aren't fully responsive (dont know if that's Pygame problem)
+###### Keys aren't fully responsive (dont know if that's Pygame problem) #solved
+ new issue: game OVER happens when multiple keys that would consequently kill snake are pressed but the game doesnt 
+ draw it on the screen fast enough 
  
  Just a boring old snake without any extra features right now
  

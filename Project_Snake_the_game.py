@@ -51,28 +51,27 @@ class Had(object):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-            keys = pygame.key.get_pressed()
-            for _ in keys:
-                if keys[pygame.K_LEFT]:
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
                     if self.dirx == 1 and self.diry == 0:  # chci znemoznit moznost macknout opacnou klavesu (byla by
                         # instantni porhra a z gameplay hlediska by to bylo frustujici
                         continue
                     self.dirx = -1
                     self.diry = 0
                     self.turns[self.head.pos[:]] = [self.dirx, self.diry]
-                elif keys[pygame.K_RIGHT]:
+                elif event.key == pygame.K_RIGHT:
                     if self.dirx == -1 and self.diry == 0:
                         continue
                     self.dirx = 1
                     self.diry = 0
                     self.turns[self.head.pos[:]] = [self.dirx, self.diry]
-                elif keys[pygame.K_UP]:
+                elif event.key == pygame.K_UP:
                     if self.dirx == 0 and self.diry == 1:
                         continue
                     self.dirx = 0
                     self.diry = -1
                     self.turns[self.head.pos[:]] = [self.dirx, self.diry]
-                elif keys[pygame.K_DOWN]:
+                elif event.key == pygame.K_DOWN:
                     if self.dirx == 0 and self.diry == -1:
                         continue
                     self.dirx = 0
@@ -142,15 +141,6 @@ def drawgrid(w: int, r: int, surface):
         pygame.draw.line(surface, (255, 255, 255), (0, y), (w, y))
 
 
-def refreshwindow(surface):
-    global width, rows, h, apple
-    surface.fill((0, 0, 0))
-    h.draw(surface)
-    apple.draw(surface)
-    drawgrid(width, rows, surface)
-    pygame.display.update()
-
-
 def spawnapple(r, item):
     positions = item.body
     while True:
@@ -170,8 +160,17 @@ def message(subject, content):
     messagebox.showinfo(subject, content)
 
 
-def main():
+def refreshwindow(surface):
     global width, rows, h, apple
+    surface.fill((0, 0, 0))
+    h.draw(surface)
+    apple.draw(surface)
+    drawgrid(width, rows, surface)
+    pygame.display.update()
+
+
+def main():
+    global width, rows, h, apple, speed
     width = 500
     rows = 20
     win = pygame.display.set_mode((width, width))
@@ -180,10 +179,10 @@ def main():
     apple = Cube(spawnapple(rows, h), col=(0, 255, 0))
     flag = True
     speed = 10
+    tick = 120
     clock = pygame.time.Clock()
 
     while flag:
-        pygame.time.delay(50)
         clock.tick(speed)
         h.move()
         if h.body[0].pos == apple.pos:
@@ -195,6 +194,7 @@ def main():
             if h.body[x].pos in list(map(lambda z: z.pos, h.body[x + 1:])):
                 message("You LOST!", "Game Over \n" + "Your score was: " + str(len(h.body)))
                 flag = False
+
         refreshwindow(win)
 
     pass
