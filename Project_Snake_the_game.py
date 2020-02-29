@@ -51,7 +51,7 @@ class Had(object):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-            if event.type == pygame.KEYDOWN:
+            if event.type == pygame.KEYDOWN:  # pohyb hada a zmena jeho smeru podle klavesy
                 if event.key == pygame.K_LEFT:
                     if self.dirx == 1 and self.diry == 0:  # chci znemoznit moznost macknout opacnou klavesu (byla by
                         # instantni porhra a z gameplay hlediska by to bylo frustujici
@@ -77,14 +77,14 @@ class Had(object):
                     self.dirx = 0
                     self.diry = 1
                     self.turns[self.head.pos[:]] = [self.dirx, self.diry]
-        for i, c in enumerate(self.body):
+        for i, c in enumerate(self.body):  # zajisteni aby vsechny ostatni hadovy casti udelali stejny pohyb
             p = c.pos[:]
             if p in self.turns:
                 turn = self.turns[p]
                 c.move(turn[0], turn[1])
                 if i == len(self.body) - 1:
                     self.turns.pop(p)
-            else:
+            else:  # + "overflow" pokud se dostanu mimo grid
                 if c.dirx == -1 and c.pos[0] <= 0:
                     c.pos = (rows - 1, c.pos[1])
                 elif c.dirx == 1 and c.pos[0] >= rows - 1:
@@ -123,7 +123,7 @@ class Had(object):
     def draw(self, surface):
         for i, c in enumerate(self.body):
             if i == 0:
-                c.draw(surface, True)
+                c.draw(surface, True)  # pokud je to "hlava" hada tak chci oci
             else:
                 c.draw(surface)
 
@@ -185,12 +185,12 @@ def main():
     while flag:
         clock.tick(speed)
         h.move()
-        if h.body[0].pos == apple.pos:
+        if h.body[0].pos == apple.pos:  # růst hada
             h.addcube()
             apple = Cube(spawnapple(rows, h), col=(0, 255, 0))
             speed += 1
 
-        for x in range(len(h.body)):
+        for x in range(len(h.body)):  # kouknout se jestli jsem nenaboural sám do sebe
             if h.body[x].pos in list(map(lambda z: z.pos, h.body[x + 1:])):
                 message("You LOST!", "Game Over \n" + "Your score was: " + str(len(h.body)))
                 flag = False
