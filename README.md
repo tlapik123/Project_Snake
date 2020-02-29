@@ -5,34 +5,32 @@
  ## Table of Contents:
  Python file with programmed game.
  ## Output
- The output of the file is a window with pixels representing the snake. 
+ The output of the file is a window with squares representing the snake. 
  
- There is also a menu.
- 
- 
- >/rest of the features/
  ## Installation:
  To launch the project install Python and then download the .py file from the repository. 
  
  After a successful download just launch the file.
  ## Usage:
- To play the game just run the .py file and navigate wia arrows in the simple menu. 
+ To play the game just run the .py file and turn using Arrow keys 
  
- Then hit enter to select the option. 
- 
- In the game navigate your snake wia arrows like in the menu. 
- 
- Collect red dots (with some imagination apples) to grow your snake and avoid the obstacles.
- 
- 
- >/rest of the features/
+ Collect green dots (with some imagination poisonous apples) to grow your snake and avoid the obstacles.
  ## Built with
  * [Pygame](https://www.pygame.org/) - The main library used
- ## Credits:
- * **Petr Tlapa** - *lead manager*
- * **Petr Tlapa** - *designer*
- * **Petr Tlapa** - *programmer*
- ## Acknowledgments
- Almost nothing is done now.
- Lots of features missing!
+ ## Known Issues:
+ Keys aren't fully responsive (dont know if that's Pygame problem)
+ 
+ Just a boring old snake without any extra features right now
+ 
+ Documentation in file missing
+ 
+ Lots of stuff looked up online and taken from people that came with much better implementation
+ ## Planning to add:
+ Barrier blocks
+ 
+ Negative effects
+ 
+ Different levels maybe?
+ 
+ 
  
