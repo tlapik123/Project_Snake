@@ -14,9 +14,11 @@
  ![Me losing the game](/README_images/img2.png)
  
  ## Installation:
- To launch the project install Python and then download the .py file from the repository. 
- 
- After a successful download just launch the file.
+ * Install Python
+ * Install (should be already installed) Pip
+ * using Pip [install Pygame](https://www.pygame.org/wiki/GettingStarted)
+ * download the repository or just the "Project_sake_files" and the "Project_Snake_the_hame.py"
+ * run the .py file
  ## Usage:
  To play the game just run the .py file and turn using Arrow keys 
  
