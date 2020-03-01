@@ -59,24 +59,28 @@ class Had(object):
                     self.dirx = -1
                     self.diry = 0
                     self.turns[self.head.pos[:]] = [self.dirx, self.diry]
+                    break
                 elif event.key == pygame.K_RIGHT:
                     if self.dirx == -1 and self.diry == 0:
                         continue
                     self.dirx = 1
                     self.diry = 0
                     self.turns[self.head.pos[:]] = [self.dirx, self.diry]
+                    break
                 elif event.key == pygame.K_UP:
                     if self.dirx == 0 and self.diry == 1:
                         continue
                     self.dirx = 0
                     self.diry = -1
                     self.turns[self.head.pos[:]] = [self.dirx, self.diry]
+                    break
                 elif event.key == pygame.K_DOWN:
                     if self.dirx == 0 and self.diry == -1:
                         continue
                     self.dirx = 0
                     self.diry = 1
                     self.turns[self.head.pos[:]] = [self.dirx, self.diry]
+                    break
         for i, c in enumerate(self.body):  # zajisteni aby vsechny ostatni hadovy casti udelali stejny pohyb
             p = c.pos[:]
             if p in self.turns:
@@ -174,7 +178,7 @@ def main():
     width = 500
     rows = 20
     #  load music
-    pygame.mixer.init(22050, -16, 2, 1024)
+    pygame.mixer.init(22050, -16, 2, 256)
     pygame.mixer.music.load("Project_snake_files\soundtrack.wav")
     pygame.mixer.music.play(-1)
     beep = pygame.mixer.Sound("Project_snake_files\puap.wav")

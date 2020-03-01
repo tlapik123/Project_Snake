@@ -24,14 +24,14 @@
  ## Built with:
  * [Pygame](https://www.pygame.org/) - The main library used
  ## Known Issues:
- new issue: game OVER happens when multiple keys that would consequently kill snake are pressed but the game doesnt 
- draw it on the screen fast enough 
- 
+ new issue: Only one key will be registered as an input per tick -> future feature: remember multiple inputs
+  
  Just a boring old snake without any extra features right now
  
  Documentation in file missing
  ##### Solved:
- ###### Keys aren't fully responsive (dont know if that's Pygame problem)
+ * ###### Keys aren't fully responsive (dont know if that's Pygame problem)
+ * ###### game OVER happens when multiple keys that would consequently kill snake are pressed but the game doesnt
  
  ## Planning to add:
  Barrier blocks
@@ -39,6 +39,8 @@
  Negative effects
  
  Different levels maybe?
+ 
+ Using mouse to control the snake (Is it even possible?)
  
  ## Credit:
  To my sister Gabriela who is the author of all the music used.
