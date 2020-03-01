@@ -3,7 +3,7 @@
  ## Description
  Game Snake programmed in python with few extra features as a credit programm.
  ## Table of Contents:
- Python file with programmed game.
+ Python file with programmed gama and folder with ingame sounds.
  ## Output
  The output of the file is a window with squares representing the snake. 
  
