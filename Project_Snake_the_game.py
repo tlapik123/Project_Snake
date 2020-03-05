@@ -44,8 +44,8 @@ class Had(object):
         self.col = col
         self.head = Cube(pos)
         self.body.append(self.head)
-        self.dirx = 0
-        self.diry = 1
+        self.dirx = self.head.dirx
+        self.diry = self.head.diry
 
     def move(self):
         for event in pygame.event.get():
