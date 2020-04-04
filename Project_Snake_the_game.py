@@ -1,7 +1,4 @@
-from typing import List, Any
-
 import pygame
-import math
 import random
 import tkinter as tk
 from tkinter import messagebox
@@ -179,10 +176,10 @@ def main():
     rows = 20
     #  load music
     pygame.mixer.init(22050, -16, 2, 256)
-    pygame.mixer.music.load("Project_snake_files\soundtrack.wav")
+    pygame.mixer.music.load("Project_snake_files\\soundtrack.wav")
     pygame.mixer.music.play(-1)
-    beep = pygame.mixer.Sound("Project_snake_files\puap.wav")
-    gameover = pygame.mixer.Sound("Project_snake_files\game_over.wav")
+    beep = pygame.mixer.Sound("Project_snake_files\\puap.wav")
+    gameover = pygame.mixer.Sound("Project_snake_files\\game_over.wav")
     window = pygame.display
     win = window.set_mode((width, width))
     window.set_caption("Snake 0.61")
@@ -191,7 +188,6 @@ def main():
     apple = Cube(spawnapple(rows, h), col=(0, 255, 0))
     flag = True
     speed = 10
-    tick = 120
     clock = pygame.time.Clock()
 
     while flag:
